@@ -37,11 +37,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_basic_float16) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{1024, 4096}, {1024, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-                {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-            },
-        }
+            {{{1024, 4096}, {1024, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+            {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -66,11 +64,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_basic_bfloat16) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{1024, 4096}, {1024, 4096}}, ge::DT_BF16, ge::FORMAT_ND},
-                {{{1024, 2048}, {1024, 2048}}, ge::DT_BF16, ge::FORMAT_ND},
-            },
-        }
+            {{{1024, 4096}, {1024, 4096}}, ge::DT_BF16, ge::FORMAT_ND},
+            {{{1024, 2048}, {1024, 2048}}, ge::DT_BF16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -95,11 +91,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_large_shape) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{32768, 16384}, {32768, 16384}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-                {{{32768, 8192}, {32768, 8192}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-            },
-        }
+            {{{32768, 16384}, {32768, 16384}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+            {{{32768, 8192}, {32768, 8192}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -124,11 +118,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_small_shape) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{32, 128}, {32, 128}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-                {{{32, 64}, {32, 64}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-            },
-        }
+            {{{32, 128}, {32, 128}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+            {{{32, 64}, {32, 64}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -153,11 +145,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_transpose_b) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{1024, 4096}, {1024, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-                {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-            },
-        }
+            {{{1024, 4096}, {1024, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+            {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -182,11 +172,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_n_zero) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{1024, 0}, {1024, 0}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-                {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-            },
-        }
+            {{{1024, 0}, {1024, 0}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+            {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -211,11 +199,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_k_zero) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-                {{{1024, 0}, {1024, 0}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-            },
-        }
+            {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+            {{{1024, 0}, {1024, 0}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -240,11 +226,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_bias_float16) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{2048, 2048}, {2048, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-                {{{2048, 4096}, {2048, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-            },
-        }
+            {{{2048, 2048}, {2048, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+            {{{2048, 4096}, {2048, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -269,11 +253,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_bias_bfloat16) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{2048, 2048}, {2048, 2048}}, ge::DT_BF16, ge::FORMAT_ND},
-                {{{2048, 4096}, {2048, 4096}}, ge::DT_BF16, ge::FORMAT_ND},
-            },
-        }
+            {{{2048, 2048}, {2048, 2048}}, ge::DT_BF16, ge::FORMAT_ND},
+            {{{2048, 4096}, {2048, 4096}}, ge::DT_BF16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -298,11 +280,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_world_size_2) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{1024, 4096}, {1024, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-                {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-            },
-        }
+            {{{1024, 4096}, {1024, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+            {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -327,11 +307,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_world_size_4) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{1024, 4096}, {1024, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-                {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-            },
-        }
+            {{{1024, 4096}, {1024, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+            {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
@@ -356,11 +334,9 @@ TEST_F(AllGatherMatmulTiling, all_gather_matmul_test_world_size_16) {
                 {{}, ge::DT_STRING, ge::FORMAT_ND},
         },
         {
-            {
-                {{{1024, 4096}, {1024, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-                {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
-            },
-        }
+            {{{1024, 4096}, {1024, 4096}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+            {{{1024, 2048}, {1024, 2048}}, ge::DT_FLOAT16, ge::FORMAT_ND},
+        },
         {
             {"group", Ops::Transformer::AnyValue::CreateFrom<std::string>("group")},
             {"is_trans_a", Ops::Transformer::AnyValue::CreateFrom<bool>(false)},
