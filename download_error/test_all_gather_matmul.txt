@@ -1,423 +1,131 @@
-
-(mc2_py38) [root@hisi-dongguan-ip110 ops-transformer-dev-master]# bash build.sh --ophost_test --ops=all_gather_matmul --disable_asan
-[2025-10-15 17:56:32] which: no ccache in (/home/mc2_common/Ascend/8.3.RC1/tools/ncs/bin:/home/mc2_common/Ascend/latest/tools/aoe/bin:/home/mc2_common/Ascend/latest/toolkit/tools/show_kernel_debug_data/:/home/mc2_common/Ascend/latest/toolkit/tools/msobjdump/:/home/mc2_common/Ascend/latest/toolkit/tools/ascc:/home/mc2_common/Ascend/latest/toolkit/tools/ccec_compiler/bin:/home/mc2_common/Ascend/latest/toolkit/tools/ascend_system_advisor/asys:/home/mc2_common/Ascend/latest/toolkit/tools/profiler/bin/:/home/mc2_common/Ascend/latest/toolkit/python/site-packages/bin/:/home/mc2_common/Ascend/latest/compiler/ascc:/home/mc2_common/Ascend/latest/compiler/ccec_compiler/bin:/home/mc2_common/Ascend/latest/compiler/bin:/home/mc2_common/Ascend/latest/bin:/home/mc2_common/Ascend/latest/compiler/ccec_compiler/bin:/home/mc2_common/Ascend/latest/tools/ccec_compiler/bin:/home/hjh/mpich/bin:/root/.remotedev-server/bin/54b7d5e655f755d970eae443dec651dc57c16686/1.96.16/bin:/home/hjh/mpich/bin:/home/anaconda3/envs/mc2_py38/bin:/home/anaconda3/condabin:/home/hjh/mpich/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/.remotedev-server/bin/54b7d5e655f755d970eae443dec651dc57c16686/1.96.16:/sbin)
-[2025-10-15 17:56:32] ----------------------------------------------------------------
-[2025-10-15 17:56:32] Start to build ut
-[2025-10-15 17:56:32] fatal: not a git repository (or any of the parent directories): .git
-[2025-10-15 17:56:32] -- The C compiler identification is GNU 10.3.1
-[2025-10-15 17:56:33] -- The CXX compiler identification is GNU 10.3.1
-[2025-10-15 17:56:33] -- Detecting C compiler ABI info
-[2025-10-15 17:56:33] -- Detecting C compiler ABI info - done
-[2025-10-15 17:56:33] -- Check for working C compiler: /usr/bin/cc - skipped
-[2025-10-15 17:56:33] -- Detecting C compile features
-[2025-10-15 17:56:33] -- Detecting C compile features - done
-[2025-10-15 17:56:33] -- Detecting CXX compiler ABI info
-[2025-10-15 17:56:33] -- Detecting CXX compiler ABI info - done
-[2025-10-15 17:56:33] -- Check for working CXX compiler: /usr/bin/c++ - skipped
-[2025-10-15 17:56:33] -- Detecting CXX compile features
-[2025-10-15 17:56:33] -- Detecting CXX compile features - done
-[2025-10-15 17:56:33] -- compile project with library
-[2025-10-15 17:56:33] -- Found Python3: /home/anaconda3/envs/mc2_py38/bin/python3.8 (found version "3.8.20") found components: Interpreter 
-[2025-10-15 17:56:33] -- ASCEND_CANN_PACKAGE_PATH=/home/mc2_common/Ascend/latest
-[2025-10-15 17:56:33] -- ENABLE_CCACHE=ON, CUSTOM_CCACHE=
-[2025-10-15 17:56:33] -- CCACHE_PROGRAM=CCACHE_PROGRAM-NOTFOUND
-[2025-10-15 17:56:33] -- ASCEND_COMPUTE_UNIT=ascend910b
-[2025-10-15 17:56:33] -- ASCEND_OP_NAME=all_gather_matmul
-[2025-10-15 17:56:33] -- TILING_KEY=
-[2025-10-15 17:56:33] -- TESTS_UT_OPS_TEST=all_gather_matmul
-[2025-10-15 17:56:33] -- TESTS_EXAMPLE_OPS_TEST=
-[2025-10-15 17:56:33] -- Found json: /home/dwx1455832/ops-transformer-dev-master/third_party/json/include  
-[2025-10-15 17:56:33] json found in /home/dwx1455832/ops-transformer-dev-master/third_party/json, and not force rebuild cann third_party
-[2025-10-15 17:56:33] GTEST_INSTALL_PATH=/home/dwx1455832/ops-transformer-dev-master/third_party/gtest
-[2025-10-15 17:56:33] -- Found gtest: /home/dwx1455832/ops-transformer-dev-master/third_party/gtest/include  
-[2025-10-15 17:56:33] gtest found:TRUE
-[2025-10-15 17:56:33] gtest found in /home/dwx1455832/ops-transformer-dev-master/third_party/gtest, and not force rebuild cann third_party
-[2025-10-15 17:56:33] -- Start building custom package.
-[2025-10-15 17:56:33] -- Search libs under install path /home/mc2_common/Ascend/latest
-[2025-10-15 17:56:33] -- CMAKE_MODULE_PATH            :/home/dwx1455832/ops-transformer-dev-master/cmake/modules
-[2025-10-15 17:56:33] -- compile option:  -O0 -g -Wall -Wextra -Wshadow -Wformat=2 -fno-common -fPIC -Wformat-signedness -Wno-missing-include-dirs
-[2025-10-15 17:56:33] -- Found dlog: /home/mc2_common/Ascend/latest/aarch64-linux/include/toolchain  
-[2025-10-15 17:56:33] -- Transformer Variables in dlog module:
-[2025-10-15 17:56:33] -- dlog_TRANSFORMER_INCLUDE_DIR="/home/mc2_common/Ascend/latest/aarch64-linux/include/toolchain"
-[2025-10-15 17:56:33] -- dlog_SHARED_LIBRARY="/home/mc2_common/Ascend/latest/lib64/libascendalog.so"
-[2025-10-15 17:56:33] -- 
-[2025-10-15 17:56:33]  Properties for TARGET dlog:
-[2025-10-15 17:56:33]    dlog.INTERFACE_COMPILE_DEFINITIONS = "LOG_CPP;PROCESS_LOG"
-[2025-10-15 17:56:33]    dlog.INTERFACE_LINK_LIBRARIES = "dlog_headers"
-[2025-10-15 17:56:33]    dlog.IMPORTED_LOCATION = "/home/mc2_common/Ascend/latest/lib64/libascendalog.so"
-[2025-10-15 17:56:33] 
-[2025-10-15 17:56:33] -- 
-[2025-10-15 17:56:33]  Properties for TARGET dlog_headers:
-[2025-10-15 17:56:33]    dlog_headers.INTERFACE_INCLUDE_DIRECTORIES = "/home/mc2_common/Ascend/latest/aarch64-linux/include/toolchain;/home/mc2_common/Ascend/latest/aarch64-linux/include/toolchain/.."
-[2025-10-15 17:56:33] 
-[2025-10-15 17:56:33] -- Found securec: /home/mc2_common/Ascend/latest/include  
-[2025-10-15 17:56:33] -- Package json has been found.
-[2025-10-15 17:56:33] -- Found OPBASE: /home/mc2_common/Ascend/latest/include  
-[2025-10-15 17:56:33] -- Found OPABSE include:/home/mc2_common/Ascend/latest/aarch64-linux/include
-[2025-10-15 17:56:33] -- Found OPABSE lib:/home/mc2_common/Ascend/8.3.RC1/aarch64-linux/lib64/libops_base.so
-[2025-10-15 17:56:33] -- Found platform: /home/mc2_common/Ascend/latest/include  
-[2025-10-15 17:56:33] -- Found platform include:/home/mc2_common/Ascend/latest/aarch64-linux/include
-[2025-10-15 17:56:33] -- Found register library:/home/mc2_common/Ascend/8.3.RC1/aarch64-linux/lib64/libregister.so
-[2025-10-15 17:56:33] -- Found opp_registry library:/home/mc2_common/Ascend/8.3.RC1/aarch64-linux/lib64/libopp_registry.so
-[2025-10-15 17:56:33] -- Found exe_graph library:/home/mc2_common/Ascend/8.3.RC1/aarch64-linux/lib64/libexe_graph.so
-[2025-10-15 17:56:33] -- Found graph_base library:/home/mc2_common/Ascend/8.3.RC1/aarch64-linux/lib64/libgraph_base.so
-[2025-10-15 17:56:33] -- Found error_manager library:/home/mc2_common/Ascend/8.3.RC1/aarch64-linux/lib64/liberror_manager.so
-[2025-10-15 17:56:33] -- Found metadef library:/home/mc2_common/Ascend/8.3.RC1/aarch64-linux/lib64/libmetadef.so
-[2025-10-15 17:56:33] -- Found rt2_registry library:/home/mc2_common/Ascend/8.3.RC1/aarch64-linux/lib64/librt2_registry.a
-[2025-10-15 17:56:33] -- Found metadef: /home/mc2_common/Ascend/latest/include  
-[2025-10-15 17:56:33] -- Found source metadef include dir:  /home/mc2_common/Ascend/latest/aarch64-linux/include/;/home/mc2_common/Ascend/latest/aarch64-linux/include/exe_graph
-[2025-10-15 17:56:33] -- Found graph library:/home/mc2_common/Ascend/8.3.RC1/aarch64-linux/lib64/libgraph.so
-[2025-10-15 17:56:33] -- Found source acl include dir:  /home/mc2_common/Ascend/latest/aarch64-linux/include
-[2025-10-15 17:56:33] -- Found source npuruntime include dir: /home/mc2_common/Ascend/latest/aarch64-linux/include/experiment/runtime
-[2025-10-15 17:56:33] -- Found aclnn include dir:  /home/mc2_common/Ascend/latest/aarch64-linux/include
-[2025-10-15 17:56:33] -- Found opdev include dir:  /home/mc2_common/Ascend/latest/aarch64-linux/include/aclnn
-[2025-10-15 17:56:33] -- Found tilingapi include:/home/mc2_common/Ascend/latest/aarch64-linux/include
-[2025-10-15 17:56:33] -- TILINGAPI_INC_DIRS: /home/mc2_common/Ascend/latest/aarch64-linux/include;/home/mc2_common/Ascend/latest/aarch64-linux/ascendc;/home/mc2_common/Ascend/latest/aarch64-linux/ascendc/include;/home/mc2_common/Ascend/latest/aarch64-linux/ascendc/include/highlevel_api;/home/mc2_common/Ascend/latest/aarch64-linux/ascendc/include/highlevel_api/lib;/home/mc2_common/Ascend/latest/aarch64-linux/ascendc/include/highlevel_api/impl;/home/mc2_common/Ascend/latest/aarch64-linux/ascendc/include/highlevel_api/tiling
-[2025-10-15 17:56:33] -- Found tilingapi lib:/home/mc2_common/Ascend/8.3.RC1/aarch64-linux/lib64/libtiling_api.a
-[2025-10-15 17:56:33] -- Found aicpu include:/home/mc2_common/Ascend/latest/aarch64-linux/include/experiment/msprof, /home/mc2_common/Ascend/latest/aarch64-linux/include/experiment
-[2025-10-15 17:56:33] -- Found alog: /home/mc2_common/Ascend/latest/include  
-[2025-10-15 17:56:33] -- Variables in alog module:
-[2025-10-15 17:56:33] -- alog_a_INCLUDE_DIR="/home/mc2_common/Ascend/latest/include"
-[2025-10-15 17:56:33] -- slog_a_SHARED_LIBRARY="/home/mc2_common/Ascend/latest/lib64/libascendalog.so"
-[2025-10-15 17:56:33] -- alog_a_SHARED_LIBRARY="/home/mc2_common/Ascend/latest/lib64/libascendalog.so"
-[2025-10-15 17:56:33] -- 
-[2025-10-15 17:56:33]  Properties for TARGET slog_a:
-[2025-10-15 17:56:33]    slog_a.INTERFACE_COMPILE_DEFINITIONS = "LOG_CPP;PROCESS_LOG"
-[2025-10-15 17:56:33]    slog_a.INTERFACE_LINK_LIBRARIES = "alog_headers"
-[2025-10-15 17:56:33]    slog_a.IMPORTED_LOCATION = "/home/mc2_common/Ascend/latest/lib64/libascendalog.so"
-[2025-10-15 17:56:33] 
-[2025-10-15 17:56:33] -- 
-[2025-10-15 17:56:33]  Properties for TARGET alog_a:
-[2025-10-15 17:56:33]    alog_a.INTERFACE_COMPILE_DEFINITIONS = "LOG_CPP;PROCESS_LOG"
-[2025-10-15 17:56:33]    alog_a.INTERFACE_LINK_LIBRARIES = "alog_headers"
-[2025-10-15 17:56:33]    alog_a.IMPORTED_LOCATION = "/home/mc2_common/Ascend/latest/lib64/libascendalog.so"
-[2025-10-15 17:56:33] 
-[2025-10-15 17:56:33] -- 
-[2025-10-15 17:56:33]  Properties for TARGET alog_headers:
-[2025-10-15 17:56:33]    alog_headers.INTERFACE_INCLUDE_DIRECTORIES = "/home/mc2_common/Ascend/latest/include;/home/mc2_common/Ascend/latest/include/base"
-[2025-10-15 17:56:33] 
-[2025-10-15 17:56:33] -- _OpsTestUt_UTestCaseLibraries      = .
-[2025-10-15 17:56:33] -- _OpsTestUt_UTestAclnnCaseLibraries = 
-[2025-10-15 17:56:33] -- _OpsTestUt_UTestCaseLibraries and _OpsTestUt_UTestAclnnCaseLibraries both empty.
-[2025-10-15 17:56:33] -- add_opmaster_ct_gentask_modules start
-[2025-10-15 17:56:33] -- xxxx compile add_opmaster_ct_gentask_modules
-[2025-10-15 17:56:33] -- Detected architecture: ARM64
-[2025-10-15 17:56:33] -- End building custom package.
-[2025-10-15 17:56:33] -- no operator info to generate
-[2025-10-15 17:56:33] -- Configuring done
-[2025-10-15 17:56:34] -- Generating done
-[2025-10-15 17:56:34] -- Build files have been written to: /home/dwx1455832/ops-transformer-dev-master/build
-[2025-10-15 17:56:34] [  7%] Building CXX object mc2/all_gather_matmul/tests/ut/op_host/CMakeFiles/transformer_op_tiling_ut_cases_obj.dir/test_all_gather_matmul_tiling.cpp.o
-[2025-10-15 17:56:34] [  9%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_infer_obj.dir/__/__/3rd/common/op_host/matmul_common_infershape.cpp.o
-[2025-10-15 17:56:34] [  9%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_infer_obj.dir/all_gather_matmul_infershape.cpp.o
-[2025-10-15 17:56:34] [  1%] Building CXX object tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_infershape_ut_common_obj.dir/__/common/infer_datatype_context_faker.cpp.o
-[2025-10-15 17:56:34] [ 13%] Building CXX object tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_tiling_ut_common_obj.dir/__/common/tiling_context_faker.cpp.o
-[2025-10-15 17:56:34] [ 13%] Building CXX object tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_tiling_ut_common_obj.dir/__/common/tiling_case_executor.cpp.o
-[2025-10-15 17:56:34] [  9%] Building CXX object tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_infershape_ut_cases_obj.dir/__/empty.cpp.o
-[2025-10-15 17:56:34] [ 13%] Building CXX object common/CMakeFiles/common_transformer_obj.dir/src/tiling_base/tiling_util.cpp.o
-[2025-10-15 17:56:34] [ 17%] Building CXX object tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_infershape_ut_common_obj.dir/__/common/infer_shaperange_context_faker.cpp.o
-[2025-10-15 17:56:34] [ 17%] Building CXX object common/CMakeFiles/common_transformer_obj.dir/src/fallback_comm.cpp.o
-[2025-10-15 17:56:34] [ 17%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/op_graph/fallback_all_gather_matmul.cpp.o
-[2025-10-15 17:56:34] [ 19%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/op_tiling/all_gather_formulaic_tiling.cpp.o
-[2025-10-15 17:56:34] [ 21%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/ops_legacy/op_api/op_legacy_api.cpp.o
-[2025-10-15 17:56:34] [ 29%] Building CXX object tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_infershape_ut_common_obj.dir/__/common/infer_shape_case_executor.cpp.o
-[2025-10-15 17:56:34] [ 29%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/matmul_formulaic_tiling.cpp.o
-[2025-10-15 17:56:34] [ 31%] Building CXX object tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_infershape_ut_common_obj.dir/__/common/infer_shape_context_faker.cpp.o
-[2025-10-15 17:56:34] [ 31%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/ops_legacy/op_tiling/op_cache_tiling.cpp.o
-[2025-10-15 17:56:34] [ 31%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/op_tiling/all_gather_matmul_tiling.cpp.o
-[2025-10-15 17:56:34] [ 23%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/ops_legacy/op_tiling/runtime_kb_api.cpp.o
-[2025-10-15 17:56:34] [ 33%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/mc2_tiling_utils.cpp.o
-[2025-10-15 17:56:34] [ 33%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/mc2_log.cpp.o
-[2025-10-15 17:56:34] [ 47%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/__/tests/ut/framework_normal/common/mock_mc2_hcom_topo_info.cpp.o
-[2025-10-15 17:56:34] [ 47%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/one_calc_two_comm_tiling.cpp.o
-[2025-10-15 17:56:34] [ 47%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/batch_mat_mul_v3/op_host/op_tiling/batch_mat_mul_v3_base_tiling.cpp.o
-[2025-10-15 17:56:34] [ 47%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/mc2_moe_gen_task_ops_utils.cpp.o
-[2025-10-15 17:56:34] [ 47%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/matmul_performance.cpp.o
-[2025-10-15 17:56:34] [ 39%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/hccl_performance.cpp.o
-[2025-10-15 17:56:34] [ 39%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/common/op_host/op_tiling/lock.cpp.o
-[2025-10-15 17:56:34] [ 50%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/mat_mul_v3/op_host/mat_mul_v3_def.cpp.o
-[2025-10-15 17:56:34] [ 50%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/matmul_all_reduce_gen_task_ops_utils.cpp.o
-[2025-10-15 17:56:34] [ 52%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/mc2_common_infershape.cpp.o
-[2025-10-15 17:56:34] [ 52%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/common/op_host/op_tiling/hash.cpp.o
-[2025-10-15 17:56:34] [ 52%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/mc2_copy_quant_matmul_params.cpp.o
-[2025-10-15 17:56:34] [ 62%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/mat_mul_v3/op_host/op_tiling/arch35/matmul_v3_tiling_advanced.cpp.o
-[2025-10-15 17:56:34] [ 62%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/mat_mul_v3/op_host/op_tiling/matmul_v3_base_tiling.cpp.o
-[2025-10-15 17:56:34] [ 64%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/mat_mul_v3/op_host/op_tiling/matmul_v3_l2_cache.cpp.o
-[2025-10-15 17:56:34] [ 64%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/mc2_gen_task_ops_utils.cpp.o
-[2025-10-15 17:56:34] [ 64%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/mc2_moe_utils.cpp.o
-[2025-10-15 17:56:34] [ 54%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/common/op_host/op_tiling/debug_tiling.cpp.o
-[2025-10-15 17:56:34] [ 64%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/context_transfer.cpp.o
-[2025-10-15 17:56:34] [ 64%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/hccl_formulaic_tiling.cpp.o
-[2025-10-15 17:56:34] [ 64%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/batch_mat_mul_v3/op_host/batch_mat_mul_v3_def.cpp.o
-[2025-10-15 17:56:34] [ 64%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/common/src/moe_tiling_base.cpp.o
-[2025-10-15 17:56:34] [ 68%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_tiling_fixpipe.cpp.o
-[2025-10-15 17:56:34] [ 64%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_tiling_custom.cpp.o
-[2025-10-15 17:56:34] [ 68%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_compute_matmul_tiling.cpp.o
-[2025-10-15 17:56:34] [ 68%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_tiling_msd_group.cpp.o
-[2025-10-15 17:56:34] [ 70%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/arch35/weight_quant_batch_matmul_v2_adaptive_split_tiling.cpp.o
-[2025-10-15 17:56:34] [ 74%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/mat_mul_v3/op_host/op_tiling/matmul_v3_tiling.cpp.o
-[2025-10-15 17:56:34] [ 74%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/quant_batch_matmul_v3_checker.cpp.o
-[2025-10-15 17:56:34] [ 76%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/adaptive_sliding_window_tiling.cpp.o
-[2025-10-15 17:56:34] [ 76%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp.o
-[2025-10-15 17:56:34] [ 76%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/arch35/weight_quant_batch_matmul_v2_reg_base_tiling.cpp.o
-[2025-10-15 17:56:34] [ 78%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_tiling_msd.cpp.o
-[2025-10-15 17:56:34] [ 80%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_tiling.cpp.o
-[2025-10-15 17:56:34] [ 84%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling_base.cpp.o
-[2025-10-15 17:56:34] [ 84%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/arch35/weight_quant_batch_matmul_v2_basic_block_tiling.cpp.o
-[2025-10-15 17:56:34] [ 86%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_tiling_custom_nz_splitk.cpp.o
-[2025-10-15 17:56:34] [ 90%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_tiling_registry.cpp.o
-[2025-10-15 17:56:34] [ 90%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_tiling_tool.cpp.o
-[2025-10-15 17:56:34] [ 92%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/ops_legacy/op_tiling/tbe_tiling_api.cpp.o
-[2025-10-15 17:56:34] [ 92%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_weight_nz_tiling.cpp.o
-[2025-10-15 17:56:34] [ 94%] Building CXX object mc2/all_gather_matmul/op_host/CMakeFiles/ophost_transformer_tiling_obj.dir/__/__/3rd/weight_quant_batch_matmul_v2/op_host/op_tiling/weight_quant_batch_matmul_v2_tiling_splitk.cpp.o
-[2025-10-15 17:56:34] [ 94%] Built target transformer_op_infershape_ut_cases_obj
-[2025-10-15 17:56:34] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/op_host/all_gather_matmul_infershape.cpp:16:
-[2025-10-15 17:56:34] /home/dwx1455832/ops-transformer-dev-master/mc2/common/inc/context_util.h:24: warning: "OPS_CHECK_NULL_WITH_CONTEXT" redefined
-[2025-10-15 17:56:34]    24 | #define OPS_CHECK_NULL_WITH_CONTEXT(context, ptr)                                                \
-[2025-10-15 17:56:34]       | 
-[2025-10-15 17:56:34] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/op_host/all_gather_matmul_infershape.cpp:15:
-[2025-10-15 17:56:34] /home/dwx1455832/ops-transformer-dev-master/mc2/common/inc/mc2_log.h:173: note: this is the location of the previous definition
-[2025-10-15 17:56:34]   173 | #define OPS_CHECK_NULL_WITH_CONTEXT(context, ptr)                         \
-[2025-10-15 17:56:34]       | 
-[2025-10-15 17:56:34] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/op_host/all_gather_matmul_infershape.cpp:16:
-[2025-10-15 17:56:34] /home/dwx1455832/ops-transformer-dev-master/mc2/common/inc/context_util.h:32: warning: "OPS_CHECK_NULL_WITH_CONTEXT_RET" redefined
-[2025-10-15 17:56:34]    32 | #define OPS_CHECK_NULL_WITH_CONTEXT_RET(context, ptr, ret)                                       \
-[2025-10-15 17:56:34]       | 
-[2025-10-15 17:56:34] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/op_host/all_gather_matmul_infershape.cpp:15:
-[2025-10-15 17:56:34] /home/dwx1455832/ops-transformer-dev-master/mc2/common/inc/mc2_log.h:182: note: this is the location of the previous definition
-[2025-10-15 17:56:34]   182 | #define OPS_CHECK_NULL_WITH_CONTEXT_RET(context, ptr, ret)                \
-[2025-10-15 17:56:34]       | 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/ops_legacy/op_tiling/tbe_tiling_api.cpp: In function ‘bool optiling::GetTbeTiling(const gert::TilingContext*, optiling::Conv3dBpFilterV2RunInfo&, optiling::Conv3dBackpropV2TBETilingData&)’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/ops_legacy/op_tiling/tbe_tiling_api.cpp:15:46: warning: unused parameter ‘context’ [-Wunused-parameter]
-[2025-10-15 17:56:35]    15 | bool GetTbeTiling(const gert::TilingContext* context, Conv3dBpFilterV2RunInfo& runInfoForV2, Conv3dBackpropV2TBETilingData& tbeTilingForV2)
-[2025-10-15 17:56:35]       |                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/ops_legacy/op_tiling/tbe_tiling_api.cpp:15:80: warning: unused parameter ‘runInfoForV2’ [-Wunused-parameter]
-[2025-10-15 17:56:35]    15 | bool GetTbeTiling(const gert::TilingContext* context, Conv3dBpFilterV2RunInfo& runInfoForV2, Conv3dBackpropV2TBETilingData& tbeTilingForV2)
-[2025-10-15 17:56:35]       |                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/ops_legacy/op_tiling/tbe_tiling_api.cpp:15:125: warning: unused parameter ‘tbeTilingForV2’ [-Wunused-parameter]
-[2025-10-15 17:56:35]    15 | bool GetTbeTiling(const gert::TilingContext* context, Conv3dBpFilterV2RunInfo& runInfoForV2, Conv3dBackpropV2TBETilingData& tbeTilingForV2)
-[2025-10-15 17:56:35]       |                                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
-[2025-10-15 17:56:35] In file included from /home/mc2_common/Ascend/latest/aarch64-linux/include/aclnn/opdev/op_cache.h:29,
-[2025-10-15 17:56:35]                  from /home/mc2_common/Ascend/latest/aarch64-linux/include/aclnn/opdev/op_executor.h:23,
-[2025-10-15 17:56:35]                  from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/ops_legacy/op_api/op_legacy_api.cpp:16:
-[2025-10-15 17:56:35] /home/mc2_common/Ascend/latest/aarch64-linux/include/aclnn/opdev/shape_utils.h:31:6: warning: redundant redeclaration of ‘void op::ToContiguousStrides(const Shape&, op::Strides&)’ in same scope [-Wredundant-decls]
-[2025-10-15 17:56:35]    31 | void ToContiguousStrides(const op::Shape &shape, op::Strides &strides);
-[2025-10-15 17:56:35]       |      ^~~~~~~~~~~~~~~~~~~
-[2025-10-15 17:56:35] In file included from /home/mc2_common/Ascend/latest/aarch64-linux/include/aclnn/opdev/op_executor.h:19,
-[2025-10-15 17:56:35]                  from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/ops_legacy/op_api/op_legacy_api.cpp:16:
-[2025-10-15 17:56:35] /home/mc2_common/Ascend/latest/aarch64-linux/include/aclnn/opdev/common_types.h:50:6: note: previous declaration of ‘void op::ToContiguousStrides(const Shape&, op::Strides&)’
-[2025-10-15 17:56:35]    50 | void ToContiguousStrides(const op::Shape &shape, op::Strides &strides);
-[2025-10-15 17:56:35]       |      ^~~~~~~~~~~~~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_basic_float16_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:44:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]    44 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]    45 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:32:46: note: to match this ‘(’
-[2025-10-15 17:56:35]    32 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_basic_bfloat16_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:73:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]    73 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]    74 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:61:46: note: to match this ‘(’
-[2025-10-15 17:56:35]    61 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_large_shape_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:102:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]   102 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]   103 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:90:46: note: to match this ‘(’
-[2025-10-15 17:56:35]    90 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_small_shape_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:131:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]   131 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]   132 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:119:46: note: to match this ‘(’
-[2025-10-15 17:56:35]   119 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_transpose_b_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:160:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]   160 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]   161 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:148:46: note: to match this ‘(’
-[2025-10-15 17:56:35]   148 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_n_zero_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:189:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]   189 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]   190 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:177:46: note: to match this ‘(’
-[2025-10-15 17:56:35]   177 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_k_zero_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:218:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]   218 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]   219 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:206:46: note: to match this ‘(’
-[2025-10-15 17:56:35]   206 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_bias_float16_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:247:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]   247 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]   248 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:235:46: note: to match this ‘(’
-[2025-10-15 17:56:35]   235 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_bias_bfloat16_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:276:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]   276 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]   277 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:264:46: note: to match this ‘(’
-[2025-10-15 17:56:35]   264 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_world_size_2_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:305:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]   305 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]   306 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:293:46: note: to match this ‘(’
-[2025-10-15 17:56:35]   293 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_world_size_4_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:334:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]   334 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]   335 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:322:46: note: to match this ‘(’
-[2025-10-15 17:56:35]   322 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp: In member function ‘virtual void AllGatherMatmulTiling_all_gather_matmul_test_world_size_16_Test::TestBody()’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:363:10: error: expected ‘)’ before ‘{’ token
-[2025-10-15 17:56:35]   363 |         }
-[2025-10-15 17:56:35]       |          ^
-[2025-10-15 17:56:35]       |          )
-[2025-10-15 17:56:35]   364 |         {
-[2025-10-15 17:56:35]       |         ~ 
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/all_gather_matmul/tests/ut/op_host/test_all_gather_matmul_tiling.cpp:351:46: note: to match this ‘(’
-[2025-10-15 17:56:35]   351 |     gert::TilingContextPara tilingContextPara("AllGatherMatmul",
-[2025-10-15 17:56:35]       |                                              ^
-[2025-10-15 17:56:35] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/quant_batch_matmul_v3_checker.h:17,
-[2025-10-15 17:56:35]                  from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/adaptive_sliding_window_tiling.cpp:16:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/common/include/tiling_base/tiling_base.h:131:18: warning: ‘virtual void Ops::Transformer::OpTiling::TilingBaseClass::Reset(gert::TilingContext*)’ was hidden [-Woverloaded-virtual]
-[2025-10-15 17:56:35]   131 |     virtual void Reset(gert::TilingContext* context)
-[2025-10-15 17:56:35]       |                  ^~~~~
-[2025-10-15 17:56:35] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/adaptive_sliding_window_tiling.cpp:19:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/adaptive_sliding_window_tiling.h:132:10: note:   by ‘void optiling::AdaptiveSlidingWindowTiling::Reset()’
-[2025-10-15 17:56:35]   132 |     void Reset();
-[2025-10-15 17:56:35]       |          ^~~~~
-[2025-10-15 17:56:35] [ 94%] Built target common_transformer_obj
-[2025-10-15 17:56:35] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling_base.h:22,
-[2025-10-15 17:56:35]                  from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.h:22,
-[2025-10-15 17:56:35]                  from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp:16:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/common/include/tiling_base/tiling_base.h:131:18: warning: ‘virtual void Ops::Transformer::OpTiling::TilingBaseClass::Reset(gert::TilingContext*)’ was hidden [-Woverloaded-virtual]
-[2025-10-15 17:56:35]   131 |     virtual void Reset(gert::TilingContext* context)
-[2025-10-15 17:56:35]       |                  ^~~~~
-[2025-10-15 17:56:35] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp:26:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/adaptive_sliding_window_tiling.h:132:10: note:   by ‘void optiling::AdaptiveSlidingWindowTiling::Reset()’
-[2025-10-15 17:56:35]   132 |     void Reset();
-[2025-10-15 17:56:35]       |          ^~~~~
-[2025-10-15 17:56:35] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/quant_batch_matmul_v3_checker.cpp:19:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/quant_batch_matmul_v3_checker.cpp: In member function ‘bool optiling::QuantBatchMatmulV3Checker::BiasShapeCheck(const gert::Shape&, const gert::Shape&, const gert::StorageShape*) const’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/common/inc/mc2_log.h:145:36: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 7 has type ‘int64_t’ {aka ‘long int’} [-Wformat=]
-[2025-10-15 17:56:35]   145 |     REPORT_INNER_ERR_MSG("E69999", "op[%s], " err_msg,            \
-[2025-10-15 17:56:35]       |                                    ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/common/inc/mc2_log.h:231:7: note: in definition of macro ‘OP_TILING_CHECK’
-[2025-10-15 17:56:35]   231 |       log_func;                               \
-[2025-10-15 17:56:35]       |       ^~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/quant_batch_matmul_v3_checker.cpp:703:25: note: in expansion of macro ‘CUBE_INNER_ERR_REPORT’
-[2025-10-15 17:56:35]   703 |                         CUBE_INNER_ERR_REPORT(inputParams_.opName,
-[2025-10-15 17:56:35]       |                         ^~~~~~~~~~~~~~~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/arch35/quant_batch_matmul_v3_checker.cpp:704:103: note: format string is defined here
-[2025-10-15 17:56:35]   704 |                                               "Input bias dimension shape should equal n, but it is %lu while n is %lu.",
-[2025-10-15 17:56:35]       |                                                                                                     ~~^
-[2025-10-15 17:56:35]       |                                                                                                       |
-[2025-10-15 17:56:35]       |                                                                                                       long unsigned int
-[2025-10-15 17:56:35]       |                                                                                                     %lu
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling_base.cpp: In member function ‘virtual bool optiling::QuantBatchMatmulV3TilingBase::CheckShape(const std::vector<gert::Shape*>&, const gert::StorageShape*, const gert::StorageShape*, const std::vector<long int>&) const’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling_base.cpp:711:81: warning: unused parameter ‘mandtoryShape’ [-Wunused-parameter]
-[2025-10-15 17:56:35]   711 | bool QuantBatchMatmulV3TilingBase::CheckShape(const std::vector<gert::Shape *> &mandtoryShape,
-[2025-10-15 17:56:35]       |                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling_base.cpp:712:69: warning: unused parameter ‘biasShape’ [-Wunused-parameter]
-[2025-10-15 17:56:35]   712 |                                           const gert::StorageShape *biasShape,
-[2025-10-15 17:56:35]       |                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling_base.cpp:713:69: warning: unused parameter ‘pertokenShape’ [-Wunused-parameter]
-[2025-10-15 17:56:35]   713 |                                           const gert::StorageShape *pertokenShape,
-[2025-10-15 17:56:35]       |                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling_base.cpp:714:71: warning: unused parameter ‘dimValueOfMKN’ [-Wunused-parameter]
-[2025-10-15 17:56:35]   714 |                                           const std::vector<int64_t> &dimValueOfMKN) const
-[2025-10-15 17:56:35]       |                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
-[2025-10-15 17:56:35] gmake[3]: *** [mc2/all_gather_matmul/tests/ut/op_host/CMakeFiles/transformer_op_tiling_ut_cases_obj.dir/build.make:76: mc2/all_gather_matmul/tests/ut/op_host/CMakeFiles/transformer_op_tiling_ut_cases_obj.dir/test_all_gather_matmul_tiling.cpp.o] Error 1
-[2025-10-15 17:56:35] gmake[2]: *** [CMakeFiles/Makefile2:1150: mc2/all_gather_matmul/tests/ut/op_host/CMakeFiles/transformer_op_tiling_ut_cases_obj.dir/all] Error 2
-[2025-10-15 17:56:35] gmake[2]: *** Waiting for unfinished jobs....
-[2025-10-15 17:56:35] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp:27:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp: In member function ‘bool optiling::QuantBatchMatmulV3Tiling::BiasShapeCheck(const gert::Shape&) const’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/common/inc/mc2_log.h:145:36: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 7 has type ‘int64_t’ {aka ‘long int’} [-Wformat=]
-[2025-10-15 17:56:35]   145 |     REPORT_INNER_ERR_MSG("E69999", "op[%s], " err_msg,            \
-[2025-10-15 17:56:35]       |                                    ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/common/inc/mc2_log.h:231:7: note: in definition of macro ‘OP_TILING_CHECK’
-[2025-10-15 17:56:35]   231 |       log_func;                               \
-[2025-10-15 17:56:35]       |       ^~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp:422:25: note: in expansion of macro ‘CUBE_INNER_ERR_REPORT’
-[2025-10-15 17:56:35]   422 |                         CUBE_INNER_ERR_REPORT(inputParams_.opName,
-[2025-10-15 17:56:35]       |                         ^~~~~~~~~~~~~~~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp:423:95: note: format string is defined here
-[2025-10-15 17:56:35]   423 |                                               "The bias dimension should equal n, but it is %lu while n is %lu.",
-[2025-10-15 17:56:35]       |                                                                                             ~~^
-[2025-10-15 17:56:35]       |                                                                                               |
-[2025-10-15 17:56:35]       |                                                                                               long unsigned int
-[2025-10-15 17:56:35]       |                                                                                             %lu
-[2025-10-15 17:56:35] In file included from /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp:27:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp: In member function ‘bool optiling::QuantBatchMatmulV3Tiling::CheckDimValue(const gert::Shape&, const gert::StorageShape*, const gert::StorageShape*, const std::vector<long int>&) const’:
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/common/inc/mc2_log.h:145:36: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 8 has type ‘int64_t’ {aka ‘long int’} [-Wformat=]
-[2025-10-15 17:56:35]   145 |     REPORT_INNER_ERR_MSG("E69999", "op[%s], " err_msg,            \
-[2025-10-15 17:56:35]       |                                    ^
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/common/inc/mc2_log.h:231:7: note: in definition of macro ‘OP_TILING_CHECK’
-[2025-10-15 17:56:35]   231 |       log_func;                               \
-[2025-10-15 17:56:35]       |       ^~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp:474:25: note: in expansion of macro ‘CUBE_INNER_ERR_REPORT’
-[2025-10-15 17:56:35]   474 |                         CUBE_INNER_ERR_REPORT(inputParams_.opName,
-[2025-10-15 17:56:35]       |                         ^~~~~~~~~~~~~~~~~~~~~
-[2025-10-15 17:56:35] /home/dwx1455832/ops-transformer-dev-master/mc2/3rd/quant_batch_matmul_v3/op_host/op_tiling/quant_batch_matmul_v3_tiling.cpp:475:110: note: format string is defined here
-[2025-10-15 17:56:35]   475 |                                               "The pertoken shape should be equal to m[%lu] but atcual is [%lu]",
-[2025-10-15 17:56:35]       |                                                                                                            ~~^
-[2025-10-15 17:56:35]       |                                                                                                              |
-[2025-10-15 17:56:35]       |                                                                                                              long unsigned int
-[2025-10-15 17:56:35]       |                                                                                                            %lu
-[2025-10-15 17:56:36] [ 94%] Built target transformer_op_infershape_ut_common_obj
-[2025-10-15 17:56:39] [ 94%] Built target transformer_op_tiling_ut_common_obj
-[2025-10-15 17:56:41] [ 94%] Built target ophost_transformer_infer_obj
-[2025-10-15 17:56:49] [ 94%] Built target ophost_transformer_tiling_obj
-[2025-10-15 17:56:49] gmake[1]: *** [CMakeFiles/Makefile2:1401: tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_host_ut.dir/rule] Error 2
-[2025-10-15 17:56:49] gmake: *** [Makefile:618: transformer_op_host_ut] Error 2
+Run ops op_host utest
+[2025-10-15 18:07:31] [==========] Running 12 tests from 1 test suite.
+[2025-10-15 18:07:31] [----------] Global test environment set-up.
+[2025-10-15 18:07:31] Global Environment SetpUp.
+[2025-10-15 18:07:31] [----------] 12 tests from AllGatherMatmulTiling
+[2025-10-15 18:07:31] AllGatherMatmulTiling SetUp
+[2025-10-15 18:07:31] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_basic_float16
+[2025-10-15 18:07:31] [       OK ] AllGatherMatmulTiling.all_gather_matmul_test_basic_float16 (202 ms)
+[2025-10-15 18:07:31] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_basic_bfloat16
+[2025-10-15 18:07:31] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:209: Failure
+[2025-10-15 18:07:31] Expected equality of these values:
+[2025-10-15 18:07:31]   tilingKeyResult
+[2025-10-15 18:07:31]     Which is: 111
+[2025-10-15 18:07:31]   expectTilingKey
+[2025-10-15 18:07:31]     Which is: 110
+[2025-10-15 18:07:31] 
+[2025-10-15 18:07:31] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_basic_bfloat16 (202 ms)
+[2025-10-15 18:07:31] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_large_shape
+[2025-10-15 18:07:31] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:209: Failure
+[2025-10-15 18:07:31] Expected equality of these values:
+[2025-10-15 18:07:31]   tilingKeyResult
+[2025-10-15 18:07:31]     Which is: 111
+[2025-10-15 18:07:31]   expectTilingKey
+[2025-10-15 18:07:31]     Which is: 110
+[2025-10-15 18:07:31] 
+[2025-10-15 18:07:31] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_large_shape (203 ms)
+[2025-10-15 18:07:31] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_small_shape
+[2025-10-15 18:07:31] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:191: Failure
+[2025-10-15 18:07:31] Expected equality of these values:
+[2025-10-15 18:07:31]   tilingRet
+[2025-10-15 18:07:31]     Which is: 4294967295
+[2025-10-15 18:07:31]   expectResult
+[2025-10-15 18:07:31]     Which is: 0
+[2025-10-15 18:07:31] 
+[2025-10-15 18:07:31] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:209: Failure
+[2025-10-15 18:07:31] Expected equality of these values:
+[2025-10-15 18:07:31]   tilingKeyResult
+[2025-10-15 18:07:31]     Which is: 803021696
+[2025-10-15 18:07:31]   expectTilingKey
+[2025-10-15 18:07:31]     Which is: 110
+[2025-10-15 18:07:31] 
+[2025-10-15 18:07:31] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_small_shape (6 ms)
+[2025-10-15 18:07:31] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_transpose_b
+[2025-10-15 18:07:32] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:209: Failure
+[2025-10-15 18:07:32] Expected equality of these values:
+[2025-10-15 18:07:32]   tilingKeyResult
+[2025-10-15 18:07:32]     Which is: 111
+[2025-10-15 18:07:32]   expectTilingKey
+[2025-10-15 18:07:32]     Which is: 110
+[2025-10-15 18:07:32] 
+[2025-10-15 18:07:32] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_transpose_b (202 ms)
+[2025-10-15 18:07:32] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_n_zero
+[2025-10-15 18:07:32] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:209: Failure
+[2025-10-15 18:07:32] Expected equality of these values:
+[2025-10-15 18:07:32]   tilingKeyResult
+[2025-10-15 18:07:32]     Which is: 111
+[2025-10-15 18:07:32]   expectTilingKey
+[2025-10-15 18:07:32]     Which is: 110
+[2025-10-15 18:07:32] 
+[2025-10-15 18:07:32] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_n_zero (203 ms)
+[2025-10-15 18:07:32] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_k_zero
+[2025-10-15 18:07:32] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:191: Failure
+[2025-10-15 18:07:32] Expected equality of these values:
+[2025-10-15 18:07:32]   tilingRet
+[2025-10-15 18:07:32]     Which is: 4294967295
+[2025-10-15 18:07:32]   expectResult
+[2025-10-15 18:07:32]     Which is: 0
+[2025-10-15 18:07:32] 
+[2025-10-15 18:07:32] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:209: Failure
+[2025-10-15 18:07:32] Expected equality of these values:
+[2025-10-15 18:07:32]   tilingKeyResult
+[2025-10-15 18:07:32]     Which is: 803114944
+[2025-10-15 18:07:32]   expectTilingKey
+[2025-10-15 18:07:32]     Which is: 110
+[2025-10-15 18:07:32] 
+[2025-10-15 18:07:32] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_k_zero (0 ms)
+[2025-10-15 18:07:32] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_bias_float16
+[2025-10-15 18:07:32] [       OK ] AllGatherMatmulTiling.all_gather_matmul_test_bias_float16 (202 ms)
+[2025-10-15 18:07:32] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_bias_bfloat16
+[2025-10-15 18:07:32] [       OK ] AllGatherMatmulTiling.all_gather_matmul_test_bias_bfloat16 (202 ms)
+[2025-10-15 18:07:32] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_world_size_2
+[2025-10-15 18:07:32] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:209: Failure
+[2025-10-15 18:07:32] Expected equality of these values:
+[2025-10-15 18:07:32]   tilingKeyResult
+[2025-10-15 18:07:32]     Which is: 111
+[2025-10-15 18:07:32]   expectTilingKey
+[2025-10-15 18:07:32]     Which is: 110
+[2025-10-15 18:07:32] 
+[2025-10-15 18:07:32] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_world_size_2 (202 ms)
+[2025-10-15 18:07:32] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_world_size_4
+[2025-10-15 18:07:33] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:209: Failure
+[2025-10-15 18:07:33] Expected equality of these values:
+[2025-10-15 18:07:33]   tilingKeyResult
+[2025-10-15 18:07:33]     Which is: 111
+[2025-10-15 18:07:33]   expectTilingKey
+[2025-10-15 18:07:33]     Which is: 110
+[2025-10-15 18:07:33] 
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_world_size_4 (203 ms)
+[2025-10-15 18:07:33] [ RUN      ] AllGatherMatmulTiling.all_gather_matmul_test_world_size_16
+[2025-10-15 18:07:33] /home/dwx1455832/ops-transformer-dev-master/tests/ut/framework_normal/common/tiling_case_executor.cpp:209: Failure
+[2025-10-15 18:07:33] Expected equality of these values:
+[2025-10-15 18:07:33]   tilingKeyResult
+[2025-10-15 18:07:33]     Which is: 111
+[2025-10-15 18:07:33]   expectTilingKey
+[2025-10-15 18:07:33]     Which is: 110
+[2025-10-15 18:07:33] 
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_world_size_16 (203 ms)
+[2025-10-15 18:07:33] AllGatherMatmulTiling TearDown
+[2025-10-15 18:07:33] [----------] 12 tests from AllGatherMatmulTiling (2036 ms total)
+[2025-10-15 18:07:33] 
+[2025-10-15 18:07:33] [----------] Global test environment tear-down
+[2025-10-15 18:07:33] Global Environment TearDown
+[2025-10-15 18:07:33] [==========] 12 tests from 1 test suite ran. (2198 ms total)
+[2025-10-15 18:07:33] [  PASSED  ] 3 tests.
+[2025-10-15 18:07:33] [  FAILED  ] 9 tests, listed below:
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_basic_bfloat16
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_large_shape
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_small_shape
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_transpose_b
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_n_zero
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_k_zero
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_world_size_2
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_world_size_4
+[2025-10-15 18:07:33] [  FAILED  ] AllGatherMatmulTiling.all_gather_matmul_test_world_size_16
+[2025-10-15 18:07:33] 
+[2025-10-15 18:07:33]  9 FAILED TESTS
+[2025-10-15 18:07:33] gmake[3]: *** [tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_host_ut.dir/build.make:110: tests/ut/framework_normal/op_host/transformer_op_host_ut] Error 1
+[2025-10-15 18:07:33] gmake[3]: *** Deleting file 'tests/ut/framework_normal/op_host/transformer_op_host_ut'
+[2025-10-15 18:07:33] gmake[2]: *** [CMakeFiles/Makefile2:1394: tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_host_ut.dir/all] Error 2
+[2025-10-15 18:07:33] gmake[1]: *** [CMakeFiles/Makefile2:1401: tests/ut/framework_normal/op_host/CMakeFiles/transformer_op_host_ut.dir/rule] Error 2
+[2025-10-15 18:07:33] gmake: *** [Makefile:618: transformer_op_host_ut] Error 2
